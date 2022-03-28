@@ -13,7 +13,7 @@
     </td>
     <td class="votelinks" valign="top">
       <div class="center">
-        {% ifequal post.user request.user %}
+        {% if post.user == request.user %}
         <span class="asterisk">*</span><br>
         <div style="width: 14px; height: 1px"></div>
         {% else %}
@@ -27,7 +27,7 @@
             <div class='votearrow' title='upvote'></div>
           </a>
         {% endif %}
-        {% endifequal %}
+        {% endif %}
       </div>
     </td>
     <td class="title">
@@ -57,10 +57,10 @@
           discuss
         {% endif %}
       </a>
-      {% ifequal post.user request.user %}
+      {% if post.user == request.user %}
         | <a href="{% url 'post_edit' post_id=post.id %}">edit</a> |
         <a href="{% url 'post_delete' post_id=post.id %}">delete</a>
-      {% endifequal %}
+      {% endif %}
     </td>
   </tr>
 

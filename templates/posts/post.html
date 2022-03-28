@@ -10,11 +10,11 @@
 
 {% block content %}
 {% if error %}
-{% ifequal error "empty_comment" %}
+{% if error == "empty_comment" %}
     Comment can't be empty.
 {% else %}
     Please try again.
-{% endifequal %}
+{% endif %}
 <br><br>
 {% endif %}
 <table class="fatitem" border="0">
@@ -22,7 +22,7 @@
     <td align="right" valign="top" class="title"><span class="rank"></span></td>
     <td class="votelinks" valign="top">
       <div class="center">
-        {% ifequal post.user request.user %}
+        {% if post.user == request.user %}
         <span class="asterisk">*</span><br>
         <div style="width: 14px; height: 1px"></div>
         {% else %}
@@ -36,7 +36,7 @@
           <div class='votearrow' title='upvote'></div>
         </a>
         {% endif %}
-        {% endifequal %}
+        {% endif %}
       </div>
     </td>
     <td class="title"><a
@@ -60,10 +60,10 @@
       | <a href="{% url 'post' post_id=post.id %}">
       {{ post.comment_set.count }} comment{{ post.comment_set.count|pluralize }}
     </a>
-      {% ifequal post.user request.user %}
+      {% if post.user == request.user %}
       | <a href="{% url 'post_edit' post_id=post.id %}">edit</a>
       | <a href="{% url 'post_delete' post_id=post.id %}">delete</a>
-      {% endifequal %}
+      {% endif %}
     </td>
   </tr>
   <tr style="height:10px"></tr>
