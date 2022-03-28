@@ -24,7 +24,7 @@ SECRET_KEY = 'development_secret_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = '*'
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -163,3 +163,6 @@ TWITTER_RETWEET_KEYS = {
 }
 
 CRONJOBS = []
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+

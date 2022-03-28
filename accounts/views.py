@@ -126,14 +126,13 @@ def check_signup(request):
             user = CustomUser(username=username, email=email)
             user.set_password(password)
             user.api_key = secrets.token_urlsafe(15)
-            user.is_active = False
+            user.is_active = True
 
             user.save()
-            log.info(f'{username} has just sign up, sending confirmation email...')
-            send_confirmation_email(user)
+            log.info(f'{username} has just sign up')
 
             return HttpResponse(
-                "<h1>Congrats!</h1><p>You're just one step away to join the DataTau community.</p><p>We've just sent you a confirmation email. Please check your inbox and click on the confirmation link :)</p>")
+                "<h1>Congrats!</h1><p>You have registered.</p>")
 
 
 def activation(request, user_id, api_key):
