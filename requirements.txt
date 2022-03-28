@@ -4,3 +4,4 @@ django-crontab
 gunicorn
 psycopg2-binary
 django-ratelimit
+mysqlclient
