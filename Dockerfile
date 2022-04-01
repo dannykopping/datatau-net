@@ -6,6 +6,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-EXPOSE 8002
+EXPOSE 80
 
 ENTRYPOINT ["bash", "restart_db_dev.sh"]

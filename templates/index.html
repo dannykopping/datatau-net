@@ -18,13 +18,13 @@
         <div style="width: 14px; height: 1px"></div>
         {% else %}
         {% if post.id in tracking %}
-          <a id="up_{{ post.id }}" onclick="upvotePost(this)">
-            <div class='votearrow' title='upvote'
+          <!-- <a id="up_{{ post.id }}" onclick="upvotePost(this)">
+            <div class='votearrow' title='upvote' data-post-id={{ post.id }}
                  style='visibility: hidden'></div>
-          </a>
+          </a> -->
         {% else %}
           <a id="up_{{ post.id }}" onclick="upvotePost(this)" style="cursor: pointer">
-            <div class='votearrow' title='upvote'></div>
+            <div class='votearrow' title='upvote' data-post-id={{ post.id }}></div>
           </a>
         {% endif %}
         {% endif %}

@@ -169,4 +169,3 @@ TWITTER_RETWEET_KEYS = {
 CRONJOBS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-
